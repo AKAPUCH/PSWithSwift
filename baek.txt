@@ -119,5 +119,77 @@ let T = Int(readLine()!)!
 for _ in 0..<T {
   print(arr[14-Int(readLine()!)!][Int(readLine()!)!])
 }
-	
 
+
+--------------------------------------------------------------------- 
+ 
+/* B2839	설탕배달 
+
+상근이는 요즘 설탕공장에서 설탕을 배달하고 있다. 상근이는 지금 사탕가게에 설탕을 정확하게 N킬로그램을 배달해야 한다. 설탕공장에서 만드는 설탕은 봉지에 담겨져 있다. 봉지는 3킬로그램 봉지와 5킬로그램 봉지가 있다.
+
+상근이는 귀찮기 때문에, 최대한 적은 봉지를 들고 가려고 한다. 예를 들어, 18킬로그램 설탕을 배달해야 할 때, 3킬로그램 봉지 6개를 가져가도 되지만, 5킬로그램 3개와 3킬로그램 1개를 배달하면, 더 적은 개수의 봉지를 배달할 수 있다.
+
+상근이가 설탕을 정확하게 N킬로그램 배달해야 할 때, 봉지 몇 개를 가져가면 되는지 그 수를 구하는 프로그램을 작성하시오.
+
+Greedy Algo
+
+입력 : N				출력													
+18            4					
+4            -1 										
+6							2
+9							3
+11						3
+
+
+
+*/	
+
+  let N = Int(readLine()!)!
+var cnt = 0
+var ans = -1
+for i in (0...N/5).reversed() {
+  if 5*i + (N-5*i) / 3*3 == N {
+  ans = i + (N-5*i) / 3
+  break
+  }
+}
+print(ans)
+
+--------------------------------------------------------------------- 
+ 
+/* B10757	큰수 A+B
+
+
+
+입력 : A B				출력													
+Int 범위 초과 
+
+
+
+*/	
+
+var arr1 : [Int] = Array(repeating : 0, count: 10001)
+var arr2 : [Int] = Array(repeating : 0, count: 10001)
+
+let input = readLine()!.split(separator : " ").map{String($0)}
+let max = [input[0].count,input[1].count].max()!
+let str1 = input[0].reversed().map{String($0)}
+let str2 = input[1].reversed().map{String($0)}
+for i in 0..<input[0].count {
+  arr1[i] = Int(str1[i])!
+}
+for i in 0..<input[1].count{
+  arr2[i] = Int(str2[i])!
+}
+for i in 0..<10000{
+  arr1[i] = arr1[i] + arr2[i]
+  if arr1[i] >= 10 {
+    arr1[i+1] = arr1[i+1] + 1
+    arr1[i] = arr1[i]%10
+    }
+} 
+for i in (0..<max).reversed() {
+  print(arr1[i],terminator:"")
+}
+
+(unsolved)
