@@ -1,0 +1,1 @@
+print(readLine()!.split(separator: " ").map{String($0)}.count)
