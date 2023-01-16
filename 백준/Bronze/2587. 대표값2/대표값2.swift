@@ -1,0 +1,1 @@
+var arr = [Int]();for _ in 0..<5{arr.append(Int(readLine()!)!)};print(arr.reduce(0,+)/5, arr.sorted()[2],separator:"\n")
