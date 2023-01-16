@@ -1,0 +1,1 @@
+let input = readLine()!.split(separator: " ").map{Int($0)!};let k = input[1];print(readLine()!.split(separator: " ").map{Int($0)!}.sorted(by:>)[k-1])
