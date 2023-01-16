@@ -1,0 +1,1 @@
+var arr = [Int]();for _ in 0..<Int(readLine()!)!{arr.append(Int(readLine()!)!)};arr.sorted().forEach{print($0)}
