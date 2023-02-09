@@ -2,7 +2,7 @@ var arr1 = Array(repeating: 0, count: 10)
 var arr2 = Array(repeating: 0, count: 10)
 
 func getCountsOfNum(_ num : String, _ arr : inout [Int] ){
-    var x = Array(num).map{Int(String($0))!}
+    var x = num.map{Int(String($0))!}
     for i in x {
         arr[i] += 1
     }
